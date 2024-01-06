@@ -3,16 +3,17 @@
 }
 
 body{
-    background-color: rgb(206, 93, 0);
+    background-color: #F3F2F2;
     margin: 0;
 }
 
 .appBarClass{
     margin: 0;
-    background-color: rgb(233, 221, 248);
     padding: 16px 32px 0px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    
 }
+
 
 .appBarClass h1 , h2{
     margin: 0;
@@ -35,6 +36,7 @@ h1 , h2 , h3{
     margin-right: 50px;
 }
 
+
 .galeri{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -54,4 +56,22 @@ h1 , h2 , h3{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.darkicon{
+    color: rgb(53, 49, 49);
+    margin-top: 17px;
+    float: right;
+    margin-right: -219px;
+
+}
+
+.rotate-icon {
+    color : rgb(255, 255, 255);
+    float: right;
+    transition: transform 3s ease; /* Dönüş animasyonu için geçiş efekti */
+    transform: rotate(180deg); /* 180 derece dönme */
+    transform-origin: center; /* Dönme orijini */
+    cursor: pointer; /* Fare imleci türü */
+    margin-right: -225px;
 }

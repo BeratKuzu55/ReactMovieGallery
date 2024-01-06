@@ -41,6 +41,7 @@ export default function InputArea(props) {
         }}
       >
         <CssTextField fullWidth label="fullWidth" id="fullWidth" 
+        onChange={props.aramaFonksiyonu }
         />
       </Box>
     );

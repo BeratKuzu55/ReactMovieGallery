@@ -4,27 +4,33 @@ import MovieCard from "./card";
 import getMovies from "../../movie";
 
 
-/*const [aranan_film , setArananfilm] = useState({value : ""});
-
-function _handleTextFieldChange(e){
-  setArananfilm( setArananfilm(prevNote => {
-    return {
-      ...prevNote,
-       value
-    };
-  })); 
-  console.log(aranan_film);
-}*/
+var aranan_film = "";
 
 function Moviesum() {
 
-    const movies = getMovies();
+  const movies = getMovies();
+  function _handleTextFieldChange(e){
+    aranan_film = e.target.value;
+    console.log(aranan_film);
+    handleSearch();
+  }
+  
+  var [bulunanFilmler , setMovies] = useState(movies);
+  
+  function handleSearch(){
+    setMovies(movies.filter(item => item.title.toLocaleLowerCase().includes(aranan_film)));
+    console.log(bulunanFilmler)
+  }
     return (
       <>
         <InputArea
+        aramaFonksiyonu = {_handleTextFieldChange}
+        searc = {handleSearch}
+        
         ></InputArea>
+
         <div className='galeri'>
-        {movies.map((item , id) => {
+        {bulunanFilmler.map((item , id) => {
           return <MovieCard
           key = {id}
           src = {item.imagelink}
